@@ -5,29 +5,50 @@ extends KinematicBody2D
 # var b = "textvar"
 const UP = Vector2(0,-1)
 const GRAVITY = 20
-const  ACCELERATION = 250
-const MAX_SPEED = 700
+const  ACCELERATION = 150
+const MAX_SPEED = 230
 const JUMP_HEIGHT = -500
 var motion = Vector2()
-
+var i = 0
+var c = 0
 func _physics_process(delta):
 	motion.y += GRAVITY
 	
-	if Input.is_action_pressed("ui_right"):
-		motion.x = ACCELERATION
-		if motion.x > MAX_SPEED:
-			motion.x = MAX_SPEED
-		
-	elif Input.is_action_pressed("ui_left"):
-		motion.x = -ACCELERATION
-		if motion.x < -MAX_SPEED:
-			motion.x = -MAX_SPEED 
-		
+#	if Input.is_action_pressed("ui_right"):
+#		motion.x = ACCELERATION
+#		if motion.x > MAX_SPEED:
+#			motion.x = MAX_SPEED
+#
+#	elif Input.is_action_pressed("ui_left"):
+#		motion.x = -ACCELERATION
+#		if motion.x < -MAX_SPEED:
+#			motion.x = -MAX_SPEED 
+#
+	
 	if is_on_floor():
-		motion.x *= 0.95
+		i = 0
+		c = 0
+		if motion.x > MAX_SPEED:
+			motion.x *= 0.95
 		
+		else:
+			motion.x = ACCELERATION
+				
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = JUMP_HEIGHT
+		if Input.is_action_just_pressed("ui_right"):
+			motion.x= ACCELERATION*5
 	else:
-		motion.x *= 0.97
+		if motion.x > MAX_SPEED:
+			motion.x *= 0.95
+		else:
+			motion.x = ACCELERATION*0.8
+		if Input.is_action_just_pressed("ui_up") and i == 0:
+			motion.y= JUMP_HEIGHT
+			i = 1
+		elif Input.is_action_just_pressed("ui_right")and c == 0:
+			motion.x = ACCELERATION*5
+			c = 1
+		motion.x *= 1
+		
 	motion = move_and_slide(motion, UP) 
