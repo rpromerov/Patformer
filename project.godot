@@ -14,6 +14,17 @@ config/name="Patformer"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/stdout/print_fps=true
+
+[memory]
+
+limits/stdout/print_fps=false
+limits/fullsize=true
+
 [rendering]
 
+quality/shadows/filter_mode=0
 environment/default_environment="res://default_env.tres"
+threads/shadows/filter_mode=1
