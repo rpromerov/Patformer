@@ -2,14 +2,14 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Emu64_movement6.png-648bbec5fc51c884657634314a18c309.stex"
+path="res://.import/Emu64_movement6.png-144e5eec08ac61e45f3d2f482126713e.stex"
 
 [deps]
 
-source_file="res://Player/Movement/Emu64_movement6.png"
+source_file="res://Player/Running/Emu64_movement6.png"
 source_md5="1fac8e3dc3d9b8106b879ed80df952ac"
 
-dest_files=[ "res://.import/Emu64_movement6.png-648bbec5fc51c884657634314a18c309.stex" ]
+dest_files=[ "res://.import/Emu64_movement6.png-144e5eec08ac61e45f3d2f482126713e.stex" ]
 dest_md5="cd53fa5d04590e04856af55cb4c2988a"
 
 [params]

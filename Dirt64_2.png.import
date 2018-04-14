@@ -7,10 +7,10 @@ path="res://.import/Dirt64_2.png-c1af375c6ba886f2611f566f0a560f09.stex"
 [deps]
 
 source_file="res://Dirt64_2.png"
-source_md5="d8a1a93201b4e2dee2962983f24faaf2"
+source_md5="ce90bff4038f7c60a411a7604f2ee58c"
 
 dest_files=[ "res://.import/Dirt64_2.png-c1af375c6ba886f2611f566f0a560f09.stex" ]
-dest_md5="49095a05a66e8ab92af11275dd53acb3"
+dest_md5="1598d662058311779f2edfa5cbf5d9a3"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
