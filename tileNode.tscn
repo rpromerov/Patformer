@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Dirt64.png" type="Texture" id=1]
+[ext_resource path="res://Sprite.gd" type="Script" id=2]
+[ext_resource path="res://Dirt64_2.png" type="Texture" id=3]
+[ext_resource path="res://Dirt64_3.png" type="Texture" id=4]
+[ext_resource path="res://Spikes1.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 16 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tierra" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 32, 32 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 8 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Offset" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tierra" index="0"]
+
+position = Vector2( 0, 16 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tierra/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Tierra2" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 144, 32 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, 8 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Offset" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tierra2" index="0"]
+
+position = Vector2( 0, 16 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tierra2/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Tierra3" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 256, 32 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, 8 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Offset" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tierra3" index="0"]
+
+position = Vector2( 0, 16 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tierra3/StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Spikes" type="Sprite" parent="." index="3"]
+
+position = Vector2( 144, 160 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Spikes" index="0"]
+
+position = Vector2( 0, -0.377365 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/StaticBody2D" index="0"]
+
+position = Vector2( 0, 16.3774 )
+shape = SubResource( 2 )
+
+
