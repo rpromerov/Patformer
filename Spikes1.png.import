@@ -10,7 +10,7 @@ source_file="res://Spikes1.png"
 source_md5="5112cb4a0227dad37d8caaaa600f8e52"
 
 dest_files=[ "res://.import/Spikes1.png-2ad2e04272f60aa886118f342bc6877d.stex" ]
-dest_md5="cdb04380a95f1e80178446c8f45b183d"
+dest_md5="cedc2efa06fae912c3602ed6d84bd2b3"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

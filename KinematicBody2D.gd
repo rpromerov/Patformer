@@ -11,6 +11,11 @@ const JUMP_HEIGHT = -500
 var motion = Vector2()
 var i = 0
 var c = 0
+var hp = 1
+func _ready():
+	add_to_group("player")
+func getKilled():
+	hp = 0
 func _physics_process(delta):
 	motion.y += GRAVITY
 	
@@ -23,7 +28,8 @@ func _physics_process(delta):
 #		motion.x = -ACCELERATION
 #		if motion.x < -MAX_SPEED:
 #			motion.x = -MAX_SPEED 
-#
+	if hp == 0:
+		print ("True")
 	
 	if is_on_floor():
 		i = 0
@@ -32,23 +38,27 @@ func _physics_process(delta):
 			motion.x *= 0.95
 		
 		else:
-			motion.x = ACCELERATION
+			if hp == 1:
+				motion.x = ACCELERATION
 				
-		if Input.is_action_just_pressed("ui_up"):
-			motion.y = JUMP_HEIGHT
-		if Input.is_action_just_pressed("ui_right"):
-			motion.x= ACCELERATION*5
+		if hp> 0:
+			if Input.is_action_just_pressed("ui_up"):
+				motion.y = JUMP_HEIGHT
+			if Input.is_action_just_pressed("ui_right"):
+				motion.x= ACCELERATION*5
 	else:
 		if motion.x > MAX_SPEED:
 			motion.x *= 0.95
 		else:
-			motion.x = ACCELERATION*0.9
-		if Input.is_action_just_pressed("ui_up") and i == 0:
-			motion.y= JUMP_HEIGHT
-			i = 1
-		elif Input.is_action_just_pressed("ui_right")and c == 0:
-			motion.x = ACCELERATION*4
-			c = 1
+			if hp == 1:
+				motion.x = ACCELERATION*0.9
+		if hp> 0:
+			if Input.is_action_just_pressed("ui_up") and i == 0:
+				motion.y= JUMP_HEIGHT
+				i = 1
+			elif Input.is_action_just_pressed("ui_right")and c == 0:
+				motion.x = ACCELERATION*4
+				c = 1
 		motion.x *= 1
 		
 	motion = move_and_slide(motion, UP) 
