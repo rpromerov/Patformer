@@ -25,14 +25,14 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Running",
-"speed": 18.0
+"speed": 19.0
 } ]
 
 [node name="World" type="Node" index="0"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
 
-position = Vector2( -1536, 216 )
+position = Vector2( -1568, 216 )
 scale = Vector2( 1.5, 1.4888 )
 input_pickable = false
 collision_layer = 1
@@ -52,17 +52,18 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D" index="1"]
 
+offset = Vector2( 128, 0 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 0.9, 0.9 )
+zoom = Vector2( 0.75, 0.75 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
 limit_bottom = 10000000
 limit_smoothed = false
-drag_margin_h_enabled = false
-drag_margin_v_enabled = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 smoothing_enabled = true
 smoothing_speed = 5.0
 offset_v = 0.0
@@ -82,6 +83,7 @@ position = Vector2( 5.33334, -3.13541 )
 scale = Vector2( 1.16667, 1.13064 )
 frames = SubResource( 2 )
 animation = "Running"
+frame = 1
 playing = true
 offset = Vector2( 0, -8 )
 
