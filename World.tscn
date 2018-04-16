@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Player/Running/Emu64_movement1.png" type="Texture" id=2]
@@ -9,10 +9,15 @@
 [ext_resource path="res://Player/Running/Emu64_movement6.png" type="Texture" id=7]
 [ext_resource path="res://Player/Running/Emu64_movement7.png" type="Texture" id=8]
 [ext_resource path="res://Player/Running/Emu64_movement8.png" type="Texture" id=9]
-[ext_resource path="res://Player/Running/Emu64_movement9.png" type="Texture" id=10]
-[ext_resource path="res://tiles.tres" type="TileSet" id=11]
-[ext_resource path="res://spike.tscn" type="PackedScene" id=12]
-[ext_resource path="res://bouncy.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Player/Idle/Emu64_Idle1.png" type="Texture" id=10]
+[ext_resource path="res://Player/Idle/Emu64_Idle2.png" type="Texture" id=11]
+[ext_resource path="res://Player/Idle/Emu64_Idle3.png" type="Texture" id=12]
+[ext_resource path="res://Player/Idle/Emu64_Idle4.png" type="Texture" id=13]
+[ext_resource path="res://Player/Idle/Emu64_Idle5.png" type="Texture" id=14]
+[ext_resource path="res://Player/Idle/Emu64_Idle6.png" type="Texture" id=15]
+[ext_resource path="res://tiles.tres" type="TileSet" id=16]
+[ext_resource path="res://spike.tscn" type="PackedScene" id=17]
+[ext_resource path="res://bouncy.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -22,11 +27,17 @@ extents = Vector2( 16, 21.7343 )
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Running",
-"speed": 19.0
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
 } ]
+_sections_unfolded = [ "Resource" ]
 
 [node name="World" type="Node" index="0"]
 
@@ -62,7 +73,7 @@ limit_top = -10000000
 limit_right = 10000000
 limit_bottom = 10000000
 limit_smoothed = false
-drag_margin_h_enabled = true
+drag_margin_h_enabled = false
 drag_margin_v_enabled = true
 smoothing_enabled = true
 smoothing_speed = 5.0
@@ -83,14 +94,14 @@ position = Vector2( 5.33334, -3.13541 )
 scale = Vector2( 1.16667, 1.13064 )
 frames = SubResource( 2 )
 animation = "Running"
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, -8 )
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 11 )
+tile_set = ExtResource( 16 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -105,7 +116,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -393193, 2, 0, -327657, 2, 0, -327628, 0, 0, -327627, 0, 0, -262121, 2, 0, -262118, 2, 0, -262117, 2, 0, -262116, 2, 0, -262115, 1, 0, -262114, 1, 0, -262111, 1, 0, -262107, 1, 0, -262103, 1, 0, -262102, 0, 0, -262101, 0, 0, -262100, 0, 0, -262099, 0, 0, -262098, 0, 0, -262097, 0, 0, -262096, 0, 0, -262095, 0, 0, -262094, 0, 0, -262093, 0, 0, -262092, 0, 0, -262091, 0, 0, -262090, 0, 0, -262089, 0, 0, -262088, 0, 0, -262087, 0, 0, -262086, 0, 0, -262085, 0, 0, -262084, 0, 0, -262083, 0, 0, -262082, 0, 0, -262081, 0, 0, -262080, 0, 0, -262079, 0, 0, -262078, 0, 0, -262077, 0, 0, -262076, 0, 0, -262075, 0, 0, -262074, 0, 0, -262073, 0, 0, -262072, 0, 0, -262071, 0, 0, -262070, 0, 0, -262069, 0, 0, -262068, 0, 0, -262067, 0, 0, -262066, 0, 0, -262065, 0, 0, -262064, 0, 0, -262063, 0, 0, -262062, 0, 0, -262061, 0, 0, -262060, 0, 0, -262059, 0, 0, -262058, 0, 0, -262057, 0, 0, -262056, 0, 0, -262055, 0, 0, -262054, 0, 0, -262053, 0, 0, -262052, 0, 0, -262051, 0, 0, -262050, 0, 0, -262049, 0, 0, -262048, 0, 0, -262047, 0, 0, -262046, 0, 0, -196589, 2, 0, -196588, 2, 0, -196587, 2, 0, -196586, 2, 0, -196585, 2, 0, -196582, 1, 0, -131063, 1, 0, -131056, 0, 0, -131046, 1, 0, -65527, 1, 0, -65510, 1, 0, 13, 0, 0, 26, 1, 0, 65562, 1, 0, 131081, 1, 0, 131082, 2, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 0, 0, 131097, 0, 0, 131098, 0, 0, 131099, 0, 0, 131100, 0, 0, 131101, 0, 0, 131102, 0, 0, 196617, 1, 0, 327648, 0, 0, 327649, 0, 0, 327650, 0, 0, 327651, 0, 0, 327652, 0, 0, 327653, 0, 0, 327654, 0, 0, 327655, 0, 0, 327656, 0, 0, 327657, 0, 0, 327658, 0, 0, 327659, 0, 0, 327660, 0, 0, 327661, 0, 0, 327662, 0, 0, 327663, 0, 0, 327664, 0, 0, 327665, 0, 0, 327666, 0, 0, 327667, 0, 0, 327668, 0, 0, 327669, 0, 0, 327670, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 0, 0, 262150, 0, 0, 262153, 0, 0 )
+tile_data = PoolIntArray( -393193, 2, 0, -327657, 2, 0, -327628, 0, 0, -327627, 0, 0, -262121, 2, 0, -262118, 2, 0, -262117, 2, 0, -262116, 2, 0, -262115, 1, 0, -262114, 1, 0, -262111, 1, 0, -262107, 1, 0, -262103, 1, 0, -262102, 0, 0, -262101, 0, 0, -262100, 0, 0, -262099, 0, 0, -262098, 0, 0, -262097, 0, 0, -262096, 0, 0, -262095, 0, 0, -262094, 0, 0, -262093, 0, 0, -262092, 0, 0, -262091, 0, 0, -262090, 0, 0, -262089, 0, 0, -262088, 0, 0, -262087, 0, 0, -262086, 0, 0, -262085, 0, 0, -262084, 0, 0, -262083, 0, 0, -262082, 0, 0, -262081, 0, 0, -262080, 0, 0, -262079, 0, 0, -262078, 0, 0, -262077, 0, 0, -262076, 0, 0, -262075, 0, 0, -262074, 0, 0, -262073, 0, 0, -262072, 0, 0, -262071, 0, 0, -262070, 0, 0, -262069, 0, 0, -262068, 0, 0, -262067, 0, 0, -262066, 0, 0, -262065, 0, 0, -262064, 0, 0, -262063, 0, 0, -262062, 0, 0, -262061, 0, 0, -262060, 0, 0, -262059, 0, 0, -262058, 0, 0, -262057, 0, 0, -262056, 0, 0, -262055, 0, 0, -262054, 0, 0, -262053, 0, 0, -262052, 0, 0, -262051, 0, 0, -262050, 0, 0, -262049, 0, 0, -262048, 0, 0, -262047, 0, 0, -262046, 0, 0, -196589, 2, 0, -196588, 2, 0, -196587, 2, 0, -196586, 2, 0, -196585, 2, 0, -196582, 1, 0, -131063, 1, 0, -131056, 0, 0, -131046, 1, 0, -65527, 1, 0, -65510, 1, 0, 13, 0, 0, 26, 1, 0, 65562, 1, 0, 131081, 1, 0, 131082, 2, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 0, 0, 131097, 0, 0, 131098, 0, 0, 131099, 0, 0, 131100, 0, 0, 131101, 0, 0, 131102, 0, 0, 262123, 1, 0, 196617, 1, 0, 327648, 0, 0, 327649, 0, 0, 327650, 0, 0, 327651, 0, 0, 327652, 0, 0, 327653, 0, 0, 327654, 0, 0, 327655, 0, 0, 327656, 0, 0, 327657, 0, 0, 327658, 0, 0, 327659, 0, 0, 327660, 0, 0, 327661, 0, 0, 327662, 0, 0, 327663, 0, 0, 327664, 0, 0, 327665, 0, 0, 327666, 0, 0, 327667, 0, 0, 327668, 0, 0, 327669, 0, 0, 327670, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 0, 0, 262150, 0, 0, 262153, 0, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -114,79 +125,79 @@ __meta__ = {
 
 editor/display_folded = true
 
-[node name="Sprite" parent="Spikes" index="0" instance=ExtResource( 12 )]
+[node name="Sprite" parent="Spikes" index="0" instance=ExtResource( 17 )]
 
 position = Vector2( 480, 288 )
 
-[node name="Sprite3" parent="Spikes" index="1" instance=ExtResource( 12 )]
+[node name="Sprite3" parent="Spikes" index="1" instance=ExtResource( 17 )]
 
 position = Vector2( 736, 160 )
 
-[node name="Sprite4" parent="Spikes" index="2" instance=ExtResource( 12 )]
+[node name="Sprite4" parent="Spikes" index="2" instance=ExtResource( 17 )]
 
 position = Vector2( 992, 160 )
 
-[node name="Sprite8" parent="Spikes" index="3" instance=ExtResource( 12 )]
+[node name="Sprite8" parent="Spikes" index="3" instance=ExtResource( 17 )]
 
 position = Vector2( 1184, 160 )
 
-[node name="Sprite11" parent="Spikes" index="4" instance=ExtResource( 12 )]
+[node name="Sprite11" parent="Spikes" index="4" instance=ExtResource( 17 )]
 
 position = Vector2( 2016, -224 )
 
-[node name="Sprite12" parent="Spikes" index="5" instance=ExtResource( 12 )]
+[node name="Sprite12" parent="Spikes" index="5" instance=ExtResource( 17 )]
 
 position = Vector2( 2080, -224 )
 
-[node name="Sprite13" parent="Spikes" index="6" instance=ExtResource( 12 )]
+[node name="Sprite13" parent="Spikes" index="6" instance=ExtResource( 17 )]
 
 position = Vector2( 2208, -224 )
 
-[node name="Sprite14" parent="Spikes" index="7" instance=ExtResource( 12 )]
+[node name="Sprite14" parent="Spikes" index="7" instance=ExtResource( 17 )]
 
 position = Vector2( 2272, -224 )
 
-[node name="Sprite15" parent="Spikes" index="8" instance=ExtResource( 12 )]
+[node name="Sprite15" parent="Spikes" index="8" instance=ExtResource( 17 )]
 
 position = Vector2( 2336, -224 )
 
-[node name="Sprite16" parent="Spikes" index="9" instance=ExtResource( 12 )]
+[node name="Sprite16" parent="Spikes" index="9" instance=ExtResource( 17 )]
 
 position = Vector2( 2464, -224 )
 
-[node name="Sprite17" parent="Spikes" index="10" instance=ExtResource( 12 )]
+[node name="Sprite17" parent="Spikes" index="10" instance=ExtResource( 17 )]
 
 position = Vector2( 2528, -224 )
 
-[node name="Sprite18" parent="Spikes" index="11" instance=ExtResource( 12 )]
+[node name="Sprite18" parent="Spikes" index="11" instance=ExtResource( 17 )]
 
 position = Vector2( 2592, -224 )
 
-[node name="Sprite9" parent="Spikes" index="12" instance=ExtResource( 12 )]
+[node name="Sprite9" parent="Spikes" index="12" instance=ExtResource( 17 )]
 
 position = Vector2( 1120, 160 )
 
-[node name="Sprite10" parent="Spikes" index="13" instance=ExtResource( 12 )]
+[node name="Sprite10" parent="Spikes" index="13" instance=ExtResource( 17 )]
 
 position = Vector2( 1056, 160 )
 
-[node name="Sprite5" parent="Spikes" index="14" instance=ExtResource( 12 )]
+[node name="Sprite5" parent="Spikes" index="14" instance=ExtResource( 17 )]
 
 position = Vector2( 928, 160 )
 
-[node name="Sprite6" parent="Spikes" index="15" instance=ExtResource( 12 )]
+[node name="Sprite6" parent="Spikes" index="15" instance=ExtResource( 17 )]
 
 position = Vector2( 864, 160 )
 
-[node name="Sprite7" parent="Spikes" index="16" instance=ExtResource( 12 )]
+[node name="Sprite7" parent="Spikes" index="16" instance=ExtResource( 17 )]
 
 position = Vector2( 800, 160 )
 
-[node name="Sprite2" parent="Spikes" index="17" instance=ExtResource( 12 )]
+[node name="Sprite2" parent="Spikes" index="17" instance=ExtResource( 17 )]
 
 position = Vector2( 544, 288 )
 
-[node name="Bouncy" parent="." index="3" instance=ExtResource( 13 )]
+[node name="Bouncy" parent="." index="3" instance=ExtResource( 18 )]
 
 position = Vector2( 1632, 96 )
 

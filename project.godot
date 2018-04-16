@@ -12,7 +12,7 @@ config_version=3
 
 config/name="Patformer"
 run/main_scene="res://World.tscn"
-config/icon="res://icon.png"
+config/icon="res://Player/Idle/Emu64_Idle1.png"
 
 [debug]
 
@@ -20,7 +20,8 @@ settings/fps/force_fps=60
 
 [display]
 
-window/size/resizable=false
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 
@@ -50,7 +51,6 @@ limits/fullsize=true
 
 [rendering]
 
-quality/2d/use_pixel_snap=true
 quality/shadows/filter_mode=0
 environment/default_environment="res://default_env.tres"
 threads/shadows/filter_mode=1

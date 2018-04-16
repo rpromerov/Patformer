@@ -7,10 +7,10 @@ path="res://.import/Emu64_movement6.png-144e5eec08ac61e45f3d2f482126713e.stex"
 [deps]
 
 source_file="res://Player/Running/Emu64_movement6.png"
-source_md5="1fac8e3dc3d9b8106b879ed80df952ac"
+source_md5="a46992c00444b329535820a3dc9b803e"
 
 dest_files=[ "res://.import/Emu64_movement6.png-144e5eec08ac61e45f3d2f482126713e.stex" ]
-dest_md5="cd53fa5d04590e04856af55cb4c2988a"
+dest_md5="a15a1d00502bdf84ca58d47dc535b6ff"
 
 [params]
 
