@@ -12,6 +12,8 @@ var motion = Vector2()
 var i = 0
 var c = 0
 var hp = 1
+var anim_flag=false
+
 func _ready():
 	add_to_group("player")
 func getKilled():
@@ -29,7 +31,7 @@ func _physics_process(delta):
 #		if motion.x < -MAX_SPEED:
 #			motion.x = -MAX_SPEED 
 	if hp == 0:
-		print ("True")
+		print ("DEAD")
 	
 	if is_on_floor():
 		i = 0
@@ -66,9 +68,8 @@ func _physics_process(delta):
 	#----ANIMATION----
 	if motion==Vector2(0,0):
 		get_node("AnimatedSprite").play("Idle")
-	else:
+	elif motion!=Vector2(0,0) and Input.is_action_pressed("ui_down"):
+		get_node("AnimatedSprite").play("Crouched")
+	elif motion!=Vector2(0,0):
 		get_node("AnimatedSprite").play("Running")
-	
-	
-	
 	

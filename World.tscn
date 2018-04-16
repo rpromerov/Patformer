@@ -1,49 +1,62 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://Player/Running/Emu64_movement1.png" type="Texture" id=2]
-[ext_resource path="res://Player/Running/Emu64_movement2.png" type="Texture" id=3]
-[ext_resource path="res://Player/Running/Emu64_movement3.png" type="Texture" id=4]
-[ext_resource path="res://Player/Running/Emu64_movement4.png" type="Texture" id=5]
-[ext_resource path="res://Player/Running/Emu64_movement5.png" type="Texture" id=6]
-[ext_resource path="res://Player/Running/Emu64_movement6.png" type="Texture" id=7]
-[ext_resource path="res://Player/Running/Emu64_movement7.png" type="Texture" id=8]
-[ext_resource path="res://Player/Running/Emu64_movement8.png" type="Texture" id=9]
-[ext_resource path="res://Player/Idle/Emu64_Idle1.png" type="Texture" id=10]
-[ext_resource path="res://Player/Idle/Emu64_Idle2.png" type="Texture" id=11]
-[ext_resource path="res://Player/Idle/Emu64_Idle3.png" type="Texture" id=12]
-[ext_resource path="res://Player/Idle/Emu64_Idle4.png" type="Texture" id=13]
-[ext_resource path="res://Player/Idle/Emu64_Idle5.png" type="Texture" id=14]
-[ext_resource path="res://Player/Idle/Emu64_Idle6.png" type="Texture" id=15]
-[ext_resource path="res://tiles.tres" type="TileSet" id=16]
-[ext_resource path="res://spike.tscn" type="PackedScene" id=17]
-[ext_resource path="res://bouncy.tscn" type="PackedScene" id=18]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 16, 21.7343 )
+[ext_resource path="res://Player/Idle/Emu64_Idle1.png" type="Texture" id=2]
+[ext_resource path="res://Player/Idle/Emu64_Idle2.png" type="Texture" id=3]
+[ext_resource path="res://Player/Idle/Emu64_Idle3.png" type="Texture" id=4]
+[ext_resource path="res://Player/Idle/Emu64_Idle4.png" type="Texture" id=5]
+[ext_resource path="res://Player/Idle/Emu64_Idle5.png" type="Texture" id=6]
+[ext_resource path="res://Player/Idle/Emu64_Idle6.png" type="Texture" id=7]
+[ext_resource path="res://Player/Running/Emu64_movement1.png" type="Texture" id=8]
+[ext_resource path="res://Player/Running/Emu64_movement2.png" type="Texture" id=9]
+[ext_resource path="res://Player/Running/Emu64_movement3.png" type="Texture" id=10]
+[ext_resource path="res://Player/Running/Emu64_movement4.png" type="Texture" id=11]
+[ext_resource path="res://Player/Running/Emu64_movement5.png" type="Texture" id=12]
+[ext_resource path="res://Player/Running/Emu64_movement6.png" type="Texture" id=13]
+[ext_resource path="res://Player/Running/Emu64_movement7.png" type="Texture" id=14]
+[ext_resource path="res://Player/Running/Emu64_movement8.png" type="Texture" id=15]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched1.png" type="Texture" id=16]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched2.png" type="Texture" id=17]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched3.png" type="Texture" id=18]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched4.png" type="Texture" id=19]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched5.png" type="Texture" id=20]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched6.png" type="Texture" id=21]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched7.png" type="Texture" id=22]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched8.png" type="Texture" id=23]
+[ext_resource path="res://tiles.tres" type="TileSet" id=24]
+[ext_resource path="res://spike.tscn" type="PackedScene" id=25]
+[ext_resource path="res://bouncy.tscn" type="PackedScene" id=26]
 
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "Running",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
-"name": "Idle",
-"speed": 10.0
+"name": "Crouched",
+"speed": 15.0
 } ]
 _sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 21.4938 )
 
 [node name="World" type="Node" index="0"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
 
-position = Vector2( -1568, 216 )
+position = Vector2( -1567.68, 210.823 )
 scale = Vector2( 1.5, 1.4888 )
 input_pickable = false
 collision_layer = 1
@@ -51,15 +64,16 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pickable" ]
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D" index="0"]
 
-position = Vector2( 5.33331, 0 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 5.11768, -1.89645 )
+scale = Vector2( 1.16667, 1.13064 )
+frames = SubResource( 2 )
+animation = "Running"
+frame = 6
+playing = true
+offset = Vector2( 0, -8.6 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D" index="1"]
 
@@ -88,20 +102,16 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Limit", "Material", "Smoothing" ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D" index="2"]
+[node name="BodyCollision" type="CollisionShape2D" parent="KinematicBody2D" index="2"]
 
-position = Vector2( 5.33334, -3.13541 )
-scale = Vector2( 1.16667, 1.13064 )
-frames = SubResource( 2 )
-animation = "Running"
-frame = 2
-playing = true
-offset = Vector2( 0, -8 )
+position = Vector2( 5.11768, 0.790268 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 16 )
+tile_set = ExtResource( 24 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -125,79 +135,79 @@ __meta__ = {
 
 editor/display_folded = true
 
-[node name="Sprite" parent="Spikes" index="0" instance=ExtResource( 17 )]
+[node name="Sprite" parent="Spikes" index="0" instance=ExtResource( 25 )]
 
 position = Vector2( 480, 288 )
 
-[node name="Sprite3" parent="Spikes" index="1" instance=ExtResource( 17 )]
+[node name="Sprite3" parent="Spikes" index="1" instance=ExtResource( 25 )]
 
 position = Vector2( 736, 160 )
 
-[node name="Sprite4" parent="Spikes" index="2" instance=ExtResource( 17 )]
+[node name="Sprite4" parent="Spikes" index="2" instance=ExtResource( 25 )]
 
 position = Vector2( 992, 160 )
 
-[node name="Sprite8" parent="Spikes" index="3" instance=ExtResource( 17 )]
+[node name="Sprite8" parent="Spikes" index="3" instance=ExtResource( 25 )]
 
 position = Vector2( 1184, 160 )
 
-[node name="Sprite11" parent="Spikes" index="4" instance=ExtResource( 17 )]
+[node name="Sprite11" parent="Spikes" index="4" instance=ExtResource( 25 )]
 
 position = Vector2( 2016, -224 )
 
-[node name="Sprite12" parent="Spikes" index="5" instance=ExtResource( 17 )]
+[node name="Sprite12" parent="Spikes" index="5" instance=ExtResource( 25 )]
 
 position = Vector2( 2080, -224 )
 
-[node name="Sprite13" parent="Spikes" index="6" instance=ExtResource( 17 )]
+[node name="Sprite13" parent="Spikes" index="6" instance=ExtResource( 25 )]
 
 position = Vector2( 2208, -224 )
 
-[node name="Sprite14" parent="Spikes" index="7" instance=ExtResource( 17 )]
+[node name="Sprite14" parent="Spikes" index="7" instance=ExtResource( 25 )]
 
 position = Vector2( 2272, -224 )
 
-[node name="Sprite15" parent="Spikes" index="8" instance=ExtResource( 17 )]
+[node name="Sprite15" parent="Spikes" index="8" instance=ExtResource( 25 )]
 
 position = Vector2( 2336, -224 )
 
-[node name="Sprite16" parent="Spikes" index="9" instance=ExtResource( 17 )]
+[node name="Sprite16" parent="Spikes" index="9" instance=ExtResource( 25 )]
 
 position = Vector2( 2464, -224 )
 
-[node name="Sprite17" parent="Spikes" index="10" instance=ExtResource( 17 )]
+[node name="Sprite17" parent="Spikes" index="10" instance=ExtResource( 25 )]
 
 position = Vector2( 2528, -224 )
 
-[node name="Sprite18" parent="Spikes" index="11" instance=ExtResource( 17 )]
+[node name="Sprite18" parent="Spikes" index="11" instance=ExtResource( 25 )]
 
 position = Vector2( 2592, -224 )
 
-[node name="Sprite9" parent="Spikes" index="12" instance=ExtResource( 17 )]
+[node name="Sprite9" parent="Spikes" index="12" instance=ExtResource( 25 )]
 
 position = Vector2( 1120, 160 )
 
-[node name="Sprite10" parent="Spikes" index="13" instance=ExtResource( 17 )]
+[node name="Sprite10" parent="Spikes" index="13" instance=ExtResource( 25 )]
 
 position = Vector2( 1056, 160 )
 
-[node name="Sprite5" parent="Spikes" index="14" instance=ExtResource( 17 )]
+[node name="Sprite5" parent="Spikes" index="14" instance=ExtResource( 25 )]
 
 position = Vector2( 928, 160 )
 
-[node name="Sprite6" parent="Spikes" index="15" instance=ExtResource( 17 )]
+[node name="Sprite6" parent="Spikes" index="15" instance=ExtResource( 25 )]
 
 position = Vector2( 864, 160 )
 
-[node name="Sprite7" parent="Spikes" index="16" instance=ExtResource( 17 )]
+[node name="Sprite7" parent="Spikes" index="16" instance=ExtResource( 25 )]
 
 position = Vector2( 800, 160 )
 
-[node name="Sprite2" parent="Spikes" index="17" instance=ExtResource( 17 )]
+[node name="Sprite2" parent="Spikes" index="17" instance=ExtResource( 25 )]
 
 position = Vector2( 544, 288 )
 
-[node name="Bouncy" parent="." index="3" instance=ExtResource( 18 )]
+[node name="Bouncy" parent="." index="3" instance=ExtResource( 26 )]
 
 position = Vector2( 1632, 96 )
 
