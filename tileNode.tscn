@@ -1,11 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Dirt64.png" type="Texture" id=1]
 [ext_resource path="res://Sprite.gd" type="Script" id=2]
 [ext_resource path="res://Dirt64_2.png" type="Texture" id=3]
 [ext_resource path="res://Dirt64_3.png" type="Texture" id=4]
+[ext_resource path="res://Dirt_fill.png" type="Texture" id=5]
+[ext_resource path="res://Dirt/DirtDecor2.png" type="Texture" id=6]
+[ext_resource path="res://Dirt/DirtDecor.png" type="Texture" id=7]
+[ext_resource path="res://Dirt/DirtDecorGrass2.png" type="Texture" id=8]
+[ext_resource path="res://Dirt/DirtDecorGrass.png" type="Texture" id=9]
+[ext_resource path="res://Dirt/DirtDecor3.png" type="Texture" id=10]
+[ext_resource path="res://Dirt/DirtDecorGrass3.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -14,8 +26,7 @@ extents = Vector2( 32, 32 )
 
 [node name="Tierra" type="Sprite" parent="." index="0"]
 
-position = Vector2( 32, 30.4 )
-scale = Vector2( 1, 0.95 )
+position = Vector2( 32, 32 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Pause", "Transform" ]
@@ -39,10 +50,13 @@ shape = SubResource( 1 )
 
 [node name="Tierra2" type="Sprite" parent="." index="1"]
 
-position = Vector2( 144, 32 )
+position = Vector2( 104, 32 )
 texture = ExtResource( 3 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Offset" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tierra2" index="0"]
 
@@ -60,10 +74,13 @@ shape = SubResource( 1 )
 
 [node name="Tierra3" type="Sprite" parent="." index="2"]
 
-position = Vector2( 256, 32 )
+position = Vector2( 176, 32 )
 texture = ExtResource( 4 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Offset" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tierra3" index="0"]
 
@@ -78,5 +95,57 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tierra3/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
+
+[node name="TierraRelleno" type="Sprite" parent="." index="3"]
+
+position = Vector2( 248, 32 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TierraRelleno" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TierraRelleno/StaticBody2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Decor2" type="Sprite" parent="." index="4"]
+
+position = Vector2( 32, 104 )
+texture = ExtResource( 6 )
+
+[node name="Decor" type="Sprite" parent="." index="5"]
+
+position = Vector2( 104, 104 )
+texture = ExtResource( 7 )
+
+[node name="DecorPasto2" type="Sprite" parent="." index="6"]
+
+position = Vector2( 176, 104 )
+texture = ExtResource( 8 )
+
+[node name="DecorPasto" type="Sprite" parent="." index="7"]
+
+position = Vector2( 248, 104 )
+texture = ExtResource( 9 )
+
+[node name="Decor3" type="Sprite" parent="." index="8"]
+
+position = Vector2( 320, 104 )
+texture = ExtResource( 10 )
+
+[node name="DecorPasto3" type="Sprite" parent="." index="9"]
+
+position = Vector2( 392, 104 )
+texture = ExtResource( 11 )
 
 

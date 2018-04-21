@@ -18,6 +18,7 @@ func _ready():
 	add_to_group("player")
 func getKilled():
 	hp = 0
+	get_node("BodyCollision").position=Vector2(0,1000)
 func _physics_process(delta):
 	motion.y += GRAVITY
 	
@@ -79,7 +80,6 @@ func _physics_process(delta):
 	elif motion!=Vector2(0,0):
 		get_node("AnimatedSprite").play("Running")
 		
-	print (motion.x)
 	
 	
 	
