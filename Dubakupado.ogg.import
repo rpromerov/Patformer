@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Dubakupado.ogg-855fbf5220fa21253773d246fe1f0ba2.oggstr"
+
+[deps]
+
+source_file="res://Dubakupado.ogg"
+source_md5="2e02f7b56819461e4f6c42f7b0efa5aa"
+
+dest_files=[ "res://.import/Dubakupado.ogg-855fbf5220fa21253773d246fe1f0ba2.oggstr" ]
+dest_md5="41f399ec1e636a10c1c22d85049dfd9d"
+
+[params]
+
+loop=true
+loop_offset=0
