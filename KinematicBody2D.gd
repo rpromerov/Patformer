@@ -16,10 +16,13 @@ var anim_flag=false
 
 func _ready():
 	add_to_group("player")
+
 func getKilled():
 	hp = 0
 	get_node("BodyCollision").position=Vector2(0,1000)
 func _physics_process(delta):
+	if Input.is_action_just_pressed("reset"):
+		get_tree().change_scene("res://World.tscn")
 	motion.y += GRAVITY
 	
 #	if Input.is_action_pressed("ui_right"):
@@ -33,6 +36,8 @@ func _physics_process(delta):
 #			motion.x = -MAX_SPEED 
 	if hp == 0:
 		print ("DEAD")
+		
+	print(motion.x)
 	
 	if is_on_floor():
 		i = 0
@@ -54,7 +59,7 @@ func _physics_process(delta):
 			motion.x *= 0.95
 		else:
 			if hp == 1:
-				motion.x = ACCELERATION*0.9
+				motion.x = ACCELERATION
 		if hp> 0:
 			if Input.is_action_just_pressed("ui_up") and i == 0:
 				motion.y= JUMP_HEIGHT
