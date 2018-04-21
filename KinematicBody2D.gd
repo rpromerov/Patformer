@@ -66,10 +66,20 @@ func _physics_process(delta):
 	motion = move_and_slide(motion, UP) 
 	
 	#----ANIMATION----
-	if motion==Vector2(0,0):
+	if is_on_floor()==false:
+		get_node("AnimatedSprite").play("Falling")
+	elif motion==Vector2(0,0):
 		get_node("AnimatedSprite").play("Idle")
+	elif motion.x>190 and Input.is_action_pressed("ui_down"):
+		get_node("AnimatedSprite").play("Dashing_C")
 	elif motion!=Vector2(0,0) and Input.is_action_pressed("ui_down"):
 		get_node("AnimatedSprite").play("Crouched")
+	elif motion.x>190:
+		get_node("AnimatedSprite").play("Dashing")
 	elif motion!=Vector2(0,0):
 		get_node("AnimatedSprite").play("Running")
+		
+	print (motion.x)
+	
+	
 	
