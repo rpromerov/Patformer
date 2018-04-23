@@ -7,10 +7,10 @@ path="res://.import/Emu64_movement_crouched2.png-adb428a236b30ea638ddc33b48abef1
 [deps]
 
 source_file="res://Player/Crouched/Emu64_movement_crouched2.png"
-source_md5="4c81ff24a84fe48695e038858255bd61"
+source_md5="edf9b8941f6ba6e713733468e0fe7469"
 
 dest_files=[ "res://.import/Emu64_movement_crouched2.png-adb428a236b30ea638ddc33b48abef11.stex" ]
-dest_md5="0b5241ee7dd3607ca3e033c59642cd2f"
+dest_md5="7bd9fe5cddef0e80618ba754c4dc6443"
 
 [params]
 
