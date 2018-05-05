@@ -72,27 +72,23 @@ func _physics_process(delta):
 	motion = move_and_slide(motion, UP) 
 	
 	#-----ANIMATION-----
-	if is_on_floor()==false:
+	if motion.y!=0 and objectsintheway.size()==0:
 		get_node("AnimatedSprite").play("Falling")
-		get_node("CBodyCollision").disabled=false
-		get_node("BodyCollision").disabled=true
-	elif motion==Vector2(0,0) and objectsintheway.size()==0:
-		get_node("AnimatedSprite").play("Idle_C")
-		get_node("CBodyCollision").disabled=false
-		get_node("BodyCollision").disabled=true
+		get_node("CBodyCollision").disabled=true
+		get_node("BodyCollision").disabled=false
 	elif motion.x>190 and Input.is_action_pressed("ui_down"):
 		get_node("AnimatedSprite").play("Dashing_C")
 		get_node("CBodyCollision").disabled=false
 		get_node("BodyCollision").disabled=true
-	elif motion!=Vector2(0,0) and Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down"):
 		get_node("AnimatedSprite").play("Crouched")
 		get_node("CBodyCollision").disabled=false
 		get_node("BodyCollision").disabled=true
 	elif motion==Vector2(0,0) and objectsintheway.size()!=0 and Input.is_action_pressed("ui_down"):
 		get_node("AnimatedSprite").play("Idle_C")
-		get_node("CBodyCollision").disabled=false
+		get_node5("CBodyCollision").disabled=false
 		get_node("BodyCollision").disabled=true
-	elif motion==Vector2(0,0):
+	elif motion==Vector2(0,0) and not Input.is_action_pressed("ui_down"):
 		get_node("AnimatedSprite").play("Idle")
 		get_node("CBodyCollision").disabled=true
 		get_node("BodyCollision").disabled=false
@@ -104,11 +100,13 @@ func _physics_process(delta):
 		get_node("AnimatedSprite").play("Running")
 		get_node("CBodyCollision").disabled=true
 		get_node("BodyCollision").disabled=false
-		
 	
 
 func _on_HeadDetection_body_entered(body): #Esto es para detectar si es que hay un bloque arriba del jugador
-	objectsintheway.append(body)           #Asi no se puede parar a menos que haya espacio
-
+	if not body.is_in_group("player"):
+		objectsintheway.append(body)       #Asi no se puede parar a menos que haya espacio
+		print("Object entered head zone")
+		print("Object:",body)
+	
 func _on_HeadDetection_body_exited(body):
 	objectsintheway.erase(body)

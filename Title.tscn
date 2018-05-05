@@ -136,7 +136,7 @@ _sections_unfolded = [ "Size Flags" ]
 
 stream = ExtResource( 2 )
 volume_db = 0.0
-autoplay = true
+autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
