@@ -1,48 +1,38 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://Player/Idle/Emu64_Idle1.png" type="Texture" id=2]
-[ext_resource path="res://Player/Idle/Emu64_Idle2.png" type="Texture" id=3]
-[ext_resource path="res://Player/Idle/Emu64_Idle3.png" type="Texture" id=4]
-[ext_resource path="res://Player/Idle/Emu64_Idle4.png" type="Texture" id=5]
-[ext_resource path="res://Player/Idle/Emu64_Idle5.png" type="Texture" id=6]
-[ext_resource path="res://Player/Idle/Emu64_Idle6.png" type="Texture" id=7]
-[ext_resource path="res://Player/Crouched/Emu64_movement_crouched1.png" type="Texture" id=8]
-[ext_resource path="res://Player/Crouched/Emu64_movement_crouched2.png" type="Texture" id=9]
-[ext_resource path="res://Player/Crouched/Emu64_movement_crouched3.png" type="Texture" id=10]
-[ext_resource path="res://Player/Crouched/Emu64_movement_crouched4.png" type="Texture" id=11]
-[ext_resource path="res://Player/Crouched/Emu64_movement_crouched5.png" type="Texture" id=12]
-[ext_resource path="res://Player/Crouched/Emu64_movement_crouched6.png" type="Texture" id=13]
-[ext_resource path="res://Player/Crouched/Emu64_movement_crouched7.png" type="Texture" id=14]
-[ext_resource path="res://Player/Crouched/Emu64_movement_crouched8.png" type="Texture" id=15]
-[ext_resource path="res://Player/Running/Emu64_movement4.png" type="Texture" id=16]
-[ext_resource path="res://Player/Running/Emu64_movement1.png" type="Texture" id=17]
-[ext_resource path="res://Player/Running/Emu64_movement2.png" type="Texture" id=18]
-[ext_resource path="res://Player/Running/Emu64_movement3.png" type="Texture" id=19]
-[ext_resource path="res://Player/Running/Emu64_movement5.png" type="Texture" id=20]
-[ext_resource path="res://Player/Running/Emu64_movement6.png" type="Texture" id=21]
-[ext_resource path="res://Player/Running/Emu64_movement7.png" type="Texture" id=22]
-[ext_resource path="res://Player/Running/Emu64_movement8.png" type="Texture" id=23]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched1.png" type="Texture" id=2]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched2.png" type="Texture" id=3]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched3.png" type="Texture" id=4]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched4.png" type="Texture" id=5]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched5.png" type="Texture" id=6]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched6.png" type="Texture" id=7]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched7.png" type="Texture" id=8]
+[ext_resource path="res://Player/Crouched/Emu64_movement_crouched8.png" type="Texture" id=9]
+[ext_resource path="res://Player/Running/Emu64_movement4.png" type="Texture" id=10]
+[ext_resource path="res://Player/Running/Emu64_movement1.png" type="Texture" id=11]
+[ext_resource path="res://Player/Running/Emu64_movement2.png" type="Texture" id=12]
+[ext_resource path="res://Player/Running/Emu64_movement3.png" type="Texture" id=13]
+[ext_resource path="res://Player/Running/Emu64_movement5.png" type="Texture" id=14]
+[ext_resource path="res://Player/Running/Emu64_movement6.png" type="Texture" id=15]
+[ext_resource path="res://Player/Running/Emu64_movement7.png" type="Texture" id=16]
+[ext_resource path="res://Player/Running/Emu64_movement8.png" type="Texture" id=17]
+[ext_resource path="res://Player/Idle/Emu64_Idle1.png" type="Texture" id=18]
+[ext_resource path="res://Player/Idle/Emu64_Idle2.png" type="Texture" id=19]
+[ext_resource path="res://Player/Idle/Emu64_Idle3.png" type="Texture" id=20]
+[ext_resource path="res://Player/Idle/Emu64_Idle4.png" type="Texture" id=21]
+[ext_resource path="res://Player/Idle/Emu64_Idle5.png" type="Texture" id=22]
+[ext_resource path="res://Player/Idle/Emu64_Idle6.png" type="Texture" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "Crouched",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Dashing_C",
 "speed": 32.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "Idle_C",
 "speed": 5.0
@@ -52,20 +42,30 @@ animations = [ {
 "name": "Jumping",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Falling",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "Running",
 "speed": 16.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "Dashing",
 "speed": 32.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Crouched",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
@@ -84,9 +84,28 @@ extents = Vector2( 16, 16.1204 )
 custom_solver_bias = 0.0
 extents = Vector2( 16, 5.2827 )
 
+[sub_resource type="Animation" id=5]
+
+resource_name = "Death"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.460863, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
+}
+
 [node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
-position = Vector2( 256.809, 232.648 )
+position = Vector2( 250.161, 207.163 )
 scale = Vector2( 1.5, 1.4888 )
 input_pickable = false
 collision_layer = 1
@@ -167,6 +186,48 @@ modulate = Color( 0.417969, 0.217148, 0.217148, 1 )
 position = Vector2( 0, -18 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="GUI" type="CanvasLayer" parent="." index="5"]
+
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Restart Message" type="Label" parent="GUI" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 312.0
+margin_top = 167.0
+margin_right = -549.0
+margin_bottom = 181.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Presione (R) para reiniciar"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Death Placeholder" type="AnimationPlayer" parent="." index="6"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Death = SubResource( 5 )
+blend_times = [  ]
 
 [connection signal="body_entered" from="HeadDetection" to="." method="_on_HeadDetection_body_entered"]
 

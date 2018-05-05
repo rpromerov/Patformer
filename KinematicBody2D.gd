@@ -22,9 +22,14 @@ func getKilled():
 	hp = 0
 	get_node("BodyCollision").position=Vector2(0,1500)
 	get_node("CBodyCollision").position=Vector2(0,1500)
+	get_node("GUI/Restart Message").visible=true
+	$"Death Placeholder".play("Death")
+	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("reset"):
 		get_tree().change_scene("res://World.tscn")
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene("res://Title.tscn")
 	motion.y += GRAVITY
 	
 #	if Input.is_action_pressed("ui_right"):

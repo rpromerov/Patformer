@@ -54,6 +54,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Size Flags" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="MenuButton" type="MenuButton" parent="VBoxContainer" index="0"]
 
@@ -75,10 +78,9 @@ enabled_focus_mode = 0
 shortcut = null
 group = null
 text = "Start"
-flat = true
+flat = false
 align = 1
 items = [  ]
-_sections_unfolded = [ "Size Flags" ]
 
 [node name="MenuButton2" type="MenuButton" parent="VBoxContainer" index="1"]
 
@@ -101,7 +103,7 @@ enabled_focus_mode = 0
 shortcut = null
 group = null
 text = "Level select"
-flat = true
+flat = false
 align = 1
 items = [  ]
 _sections_unfolded = [ "Size Flags" ]
@@ -127,7 +129,7 @@ enabled_focus_mode = 0
 shortcut = null
 group = null
 text = "Quit"
-flat = true
+flat = false
 align = 1
 items = [  ]
 _sections_unfolded = [ "Size Flags" ]
@@ -143,6 +145,8 @@ bus = "Master"
 area_mask = 1
 
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_PlayButton_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/MenuButton2" to="." method="_on_LevelSelectButton_pressed"]
 
 [connection signal="pressed" from="VBoxContainer/MenuButton3" to="." method="_on_QuitButton_pressed"]
 

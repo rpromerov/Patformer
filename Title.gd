@@ -22,3 +22,7 @@ func _on_PlayButton_pressed():
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
+
+
+func _on_LevelSelectButton_pressed():
+	get_tree().change_scene("res://Menu/Level Select.tscn")
