@@ -8,6 +8,7 @@ const GRAVITY = 20
 const  ACCELERATION = 190
 const MAX_SPEED = 240
 const JUMP_HEIGHT = -500
+var isalive=1
 var motion = Vector2()
 var i = 0
 var c = 0
@@ -27,6 +28,9 @@ func getKilled():
 	get_node("CBodyCollision").position=Vector2(0,1500)
 	get_node("GUI/Restart Message").visible=true
 	$"Death Placeholder".play("Death")
+	$Camera2D.drag_margin_top=3000
+	$Camera2D.drag_margin_bottom=3000
+	$GravityTimer.start()
 	print("DEAD")
 	
 func _physics_process(delta):
@@ -34,7 +38,7 @@ func _physics_process(delta):
 		get_tree().change_scene("res://World.tscn")
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().change_scene("res://Title.tscn")
-	motion.y += GRAVITY
+	motion.y += GRAVITY * isalive #isalive puede ser 1 o 0, para que no caiga para siempre y ocurran bugs
 	
 #	if Input.is_action_pressed("ui_right"):
 #		motion.x = ACCELERATION
@@ -116,7 +120,7 @@ func _unhandled_input(event):
 	if event.is_action_released("click"):
 		calculate_swipe(get_viewport().get_mouse_position())
 
-func calculate_swipe(swipe_end):
+func calculate_swipe(swipe_end): #Esto es para calcular el swipe
 	if swipe_start == null:
 		return 
 	var swipe = swipe_end - swipe_start
@@ -144,3 +148,6 @@ func _on_HeadDetection_body_exited(body):
 
 func _on_CrouchTimer_timeout():
 	Input.action_release("ui_down")
+
+func _on_GravityTimer_timeout():
+	isalive=0

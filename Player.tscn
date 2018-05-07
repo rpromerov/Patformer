@@ -123,7 +123,7 @@ position = Vector2( 5.11768, -1.89645 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 1 )
 animation = "Running"
-frame = 3
+frame = 6
 playing = true
 offset = Vector2( 0, -8.6 )
 _sections_unfolded = [ "Transform" ]
@@ -153,7 +153,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Limit", "Material", "Smoothing" ]
+_sections_unfolded = [ "Material", "Pause" ]
 
 [node name="BodyCollision" type="CollisionShape2D" parent="." index="2"]
 
@@ -237,10 +237,19 @@ wait_time = 0.75
 one_shot = true
 autostart = false
 
+[node name="GravityTimer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = false
+
 [connection signal="body_entered" from="HeadDetection" to="." method="_on_HeadDetection_body_entered"]
 
 [connection signal="body_exited" from="HeadDetection" to="." method="_on_HeadDetection_body_exited"]
 
 [connection signal="timeout" from="CrouchTimer" to="." method="_on_CrouchTimer_timeout"]
+
+[connection signal="timeout" from="GravityTimer" to="." method="_on_GravityTimer_timeout"]
 
 

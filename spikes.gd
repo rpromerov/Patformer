@@ -18,5 +18,5 @@ func _on_Area2D_body_entered(body):
 			print ( body)
 			body.getKilled()
 		
-			body.motion.y = -1000
+			body.motion.y = -750
 			body.motion.x = 0
