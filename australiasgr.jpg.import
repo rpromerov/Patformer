@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dirt_fill.png-e3d186bd6f619805c04d664f43cc0fda.stex"
+path="res://.import/australiasgr.jpg-f141c9eab37d5d05aea1e6cf9216962e.stex"
 
 [deps]
 
-source_file="res://Dirt_fill.png"
-source_md5="d7a281cae6415d63b8c3d5f9e036973f"
+source_file="res://australiasgr.jpg"
+source_md5="a14199b3cedc29035fde6d1baae95cb1"
 
-dest_files=[ "res://.import/Dirt_fill.png-e3d186bd6f619805c04d664f43cc0fda.stex" ]
-dest_md5="d39983bae106802bd10f29bdf4800bdd"
+dest_files=[ "res://.import/australiasgr.jpg-f141c9eab37d5d05aea1e6cf9216962e.stex" ]
+dest_md5="fd21df29ae63e9d028885f763c1613f4"
 
 [params]
 

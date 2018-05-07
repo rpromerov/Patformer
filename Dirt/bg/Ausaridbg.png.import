@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dirt_fill.png-e3d186bd6f619805c04d664f43cc0fda.stex"
+path="res://.import/Ausaridbg.png-61ce94045821a3646f921e208f5efe9f.stex"
 
 [deps]
 
-source_file="res://Dirt_fill.png"
-source_md5="d7a281cae6415d63b8c3d5f9e036973f"
+source_file="res://Dirt/bg/Ausaridbg.png"
+source_md5="96aac43a6cb16f7024d31ebd34de466b"
 
-dest_files=[ "res://.import/Dirt_fill.png-e3d186bd6f619805c04d664f43cc0fda.stex" ]
-dest_md5="d39983bae106802bd10f29bdf4800bdd"
+dest_files=[ "res://.import/Ausaridbg.png-61ce94045821a3646f921e208f5efe9f.stex" ]
+dest_md5="d5455a34a608581f6be8fd243e45c6f5"
 
 [params]
 

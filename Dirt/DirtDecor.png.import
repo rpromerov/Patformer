@@ -7,10 +7,10 @@ path="res://.import/DirtDecor.png-61f4228cc70a4101b6b86a5c52d86dd8.stex"
 [deps]
 
 source_file="res://Dirt/DirtDecor.png"
-source_md5="4f87d2ecb9874cca9e3b3b4bc326d2ac"
+source_md5="d0ec5acc99b51309cd5ff485eca47507"
 
 dest_files=[ "res://.import/DirtDecor.png-61f4228cc70a4101b6b86a5c52d86dd8.stex" ]
-dest_md5="01cabbda9053e9a8f39013b36c2f44b4"
+dest_md5="9d818a13819b8b08d29ac60667fc262e"
 
 [params]
 
