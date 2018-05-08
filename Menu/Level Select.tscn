@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Menu/Level Select.gd" type="Script" id=1]
 
-[node name="Level Select" type="MarginContainer" index="0"]
+[node name="Level Select" type="MarginContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -197,6 +197,10 @@ align = 1
 items = [  ]
 
 [connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_Tutorial_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Level 1" to="." method="_on_Level_1_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/MenuButton3" to="." method="_on_MenuButton3_pressed"]
 
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
 

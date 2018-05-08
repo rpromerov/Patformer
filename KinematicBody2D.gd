@@ -17,7 +17,7 @@ var anim_flag=false
 var objectsintheway=[]
 var swipe_start = null
 var minimum_drag = 100
-
+var currentlevel=null
 
 func _ready():
 	add_to_group("player")
@@ -35,7 +35,7 @@ func getKilled():
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("reset"):
-		get_tree().change_scene("res://World.tscn")
+		get_tree().change_scene(currentlevel)
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().change_scene("res://Title.tscn")
 	motion.y += GRAVITY * isalive #isalive puede ser 1 o 0, para que no caiga para siempre y ocurran bugs
